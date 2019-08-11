@@ -4,9 +4,17 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from users.models import CustomUser as Document
+from users.models import CustomUser
 from FileHandler.forms import DocumentForm
 from django.contrib.auth.decorators import login_required
+import os
+
+
+def _delete_file(path):
+   if os.path.isfile(path):
+       os.remove(path)
+   else:
+       print("path", path, "Does not exist!")
 
 @login_required(login_url='/accounts/login/')
 def list(request):
@@ -15,19 +23,16 @@ def list(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             p = request.user.pk
-            newdoc = Document.objects.get(id=p)
-            newdoc = Document(docfile = request.FILES['docfile'])
+            newdoc = CustomUser.objects.get(id=p)
+            print("OLDDIR=", newdoc.docfile)
+            _delete_file(str(newdoc.docfile))
+            newdoc.docfile = (request.FILES['docfile'])
             newdoc.save()
 
             # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('list'))
+            return HttpResponseRedirect("../")
     else:
         form = DocumentForm() # A empty, unbound form
 
-    # Load documents for the list page
-    documents = Document.objects.all()
-    current_user = request.user
-
-
     # Render list page with the documents and the form
-    return render(request, 'list.html', {'documents': documents, 'form': form,'id':current_user.id,'pk':current_user.pk})
+    return render(request, 'list.html', {'form': form})

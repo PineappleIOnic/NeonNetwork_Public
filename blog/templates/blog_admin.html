@@ -1,0 +1,41 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}NeonBlog - Admin Panel{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/blog/blog.css" %}" crossorigin="anonymous">
+<div class="BlogBackground">
+{% if user.is_superuser %}
+
+<h1 style="font-family: MetroThin; display: block; margin-left: auto; margin-right: auto; width: 50%; text-align: center;">A new post {{user.username}}?</h1>
+
+<div class="PostForm">
+  <form method="POST" autocomplete="false">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <p>{{ form.media }}</p>
+    <button type="submit" class="save btn btn-default">Save</button>
+  </form>
+</div>
+
+{% elif user.is_authenticated %}
+
+<p>You must be staff to login to the admin panel.</p>
+
+<button class="btn btn-secondary btn-sm" onclick="location.href='../'">Go Back</button>
+
+{% else %}
+
+<p>Please login to access this resource.</p>
+
+<button class="btn btn-secondary btn-sm" onclick="location.href='../../accounts/login'">Login</button>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

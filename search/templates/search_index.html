@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<html>
+  <form action="/search/" method="post">
+    {% csrf_token %}
+
+    <p>
+        {{ form|crispy}}
+    </p>
+
+    <center><input class="btn btn-secondary btn-lg" type="submit" value="Search"/>
+    <button onclick="location.href = '/'" type="button" class="btn btn-secondary btn-lg">Go Back</button></center>
+  </form>
+</html>
+{% endblock %}

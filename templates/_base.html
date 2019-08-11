@@ -8,7 +8,21 @@
 <title>{% block title %}NeonNetwork{% endblock title %}</title>
 <meta name="description" content="NeonNet, A bleeding edge experimental version">
 <meta name="author" content="">
-<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href='{% static "favicon/apple-touch-icon.png" %}'>
+<link rel="icon" type="image/png" sizes="32x32" href='{% static "favicon/favicon-32x32.png" %}'>
+<link rel="icon" type="image/png" sizes="16x16" href='{% static "favicon/favicon-16x16.png" %}'>
+<link rel="manifest" href='{% static "favicon/site.webmanifest" %}'>
+<link rel="mask-icon" href='{% static "favicon/safari-pinned-tab.svg" %}' color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="NeonNet">
+<meta name="application-name" content="NeonNet">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
 
 {% block css %}
 <!-- Bootstrap CSS -->
@@ -21,9 +35,36 @@
 {% endblock %}
 </head>
 
-<body>
+<script>
+function hbMenu(x) {
+  x.classList.toggle("change");
+}
+</script>
 
+<div class="dropdown">
+  <a type="button" data-toggle="dropdown">
+    <div class="container" style="position: absolute; top: 10px;" onclick="hbMenu(this)" onlick="">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </a>
+  <ul class="dropdown-menu" style="width: 10px; margin-top: 40px; margin-left: 5px;">
+    <button onclick='location.href="/"' type="button" class="btn btn-light">Home</button>
+    <button onclick='location.href="settings/"' type="button" class="btn btn-light">Settings</button>
+    <button onclick='location.href="blog/"' type="button" class="btn btn-light">Blog</button>
+    <button onclick='location.href="support/"' type="button" class="btn btn-light">Support</button>
+  </ul>
+</div>
+
+<body>
+  <script type="text/javascript" src="/static/js/backgroundchanger.js"></script>
+  <script>
+    var bgCookie = getCookie("background")
+    changeBackgroundFunc(bgCookie)
+  </script>
   <img class="logoimage" src="{% static "/images/NeonLogin.png"%}"><img>
+
 
   <div class="container">
     {% block content %}
@@ -36,6 +77,7 @@
   <script src="{% static "js/jquerry.slim.js" %}" crossorigin="anonymous"></script>
   <script src="{% static "js/ajax.popper.js" %}" crossorigin="anonymous"></script>
   <script src="{% static "js/bootstrap.min.js" %}" crossorigin="anonymous"></script>
+  <script src="{% static "js/slideout.min.js" %}" crossorigin="anonymous"></script>
 
   <!-- 3rd party JavaScript -->
 

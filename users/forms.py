@@ -15,11 +15,3 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
         fields = ('email', 'username',)
-
-class InviteAuth(forms.Form):
-    invite = forms.CharField(max_length=50, required=True,)
-    def clean_invite(self):
-        data = self.cleaned_data['invite']
-        if data != ("meme"):
-            raise ValidationError("Wrong")
-        return invite

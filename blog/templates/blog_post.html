@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load markdown_render %}
+
+{% block title %}NeonNetwork Blog{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/blog/blog.css" %}" crossorigin="anonymous">
+<div class="BlogBackground">
+  <center><h1>{{ post.title }}</h1></center>
+  <div class="BlogContentView">
+  {% autoescape off %}
+  <html>{{ post.post_content|safe|show_markdown }}</html>
+  {% endautoescape %}
+  </div>
+</div>
+
+{% endblock %}

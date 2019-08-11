@@ -4,10 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = {extras = ["argon2"],version = "*"}
 django-allauth = "*"
 django-crispy-forms = "*"
 whitenoise = "*"
+django-friendship = "*"
+pillow = "*"
+django-markdownx = "*"
 
 [dev-packages]
 "autopep8" = "*"

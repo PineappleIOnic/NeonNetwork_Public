@@ -118,6 +118,17 @@ light {
   background-color: #fff
 }
 
+.mainsmall {
+  border-radius: 10px;
+  position: center;
+  left: 0;
+  width: 320px;
+	height: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff
+}
+
 .mainusers {
   position: absolute;
 	bottom: 0px;
@@ -134,8 +145,8 @@ light {
 
 .settingsbutton {
 	position: absolute;
-	left: 0px;
-	right: 0px;
+	left: 10px;
+	top: 10px;
 	background-color: Transparent;
 	border-radius: 50%;
 	border: none;
@@ -169,6 +180,12 @@ light {
 	color: #fff;
 	font-family: Arial;
 }
+
+.login:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
 
 .circular--portrait {
   position: absolute;
@@ -224,4 +241,459 @@ light {
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
+}
+
+
+.foundbox {
+	border-radius: 25px;
+	background: #fff;
+	width: 90vw;
+	height: 50vw;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.foundimage_container {
+	float: left;
+	margin-top: -150px;
+	width: 25vw;
+	height: 25vw;
+	overflow: hidden;
+	border-radius: 50%;
+	background: #555;
+}
+
+.foundimage {
+	margin-top: -150px;
+	width: 100px;
+	height: 150px;
+	height: 90px;
+	margin: 13px;
+}
+
+.foundimage_container img {
+	object-fit: cover;
+	border: 3px solid #555;
+	margin-top: 0px;
+}
+
+.foundtext {
+	font-family: MetroRegular;
+	font-size: 5vw;
+	float: left;
+	color: #555;
+	margin-top: -35vw;
+	margin-left: 30vw;
+}
+
+.add-friend {
+	float: right;
+	margin-top: 130px;
+	margin-right: 40px;
+	border-radius: 10px;
+	width:  110px;
+	background-color: #555;
+	height: 30px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Ariel;
+}
+
+.show-profile {
+	float: right;
+	margin-top: 130px;
+	margin-right: 25px;
+	border-radius: 10px;
+	background-color: #555;
+	height: 30px;
+	width:  110px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Ariel;
+}
+
+.founddate {
+	font-family: MetroRegular;
+	float: left;
+	color: #555;
+	margin-top: -100px;
+	margin-left: 110px;
+	font-size: 3vw;
+}
+
+.imagepicker {
+	float:inherit;
+	margin-top: -220px;
+	opacity: 0;body {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+#div_id_email {
+  display: none;
+}
+
+.para {
+  text-align: center;
+  font-family: 'Segoe UI';
+  font-weight: lighter;
+}
+
+.logoimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.mainfont {
+	font-size: 25px;
+	font-family: MetroRegular, Arial, Helvetica, sans-serif
+}
+
+loginbox {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+.mein {
+  text-align: center;
+  font-family: 'Segoe UI';
+  font-weight: lighter;
+}
+
+.inputbox {
+  padding: 0;
+  height: 30px;
+  position: center;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 16px;
+}
+
+center {
+  text-align: center;
+  font-family: MetroRegular, Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: #555;
+}
+
+p {
+	font-family: MetroRegular, Arial, Helvetica, sans-serif;
+}
+
+.mains {
+  border-radius: 10px;
+  position: center;
+  left: 0;
+  width: 320px;
+	height: 500px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff
+}
+
+.mainsmall {
+  border-radius: 10px;
+  position: center;
+  left: 0;
+  width: 320px;
+	height: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff
+}
+
+.mainusers {
+  border-radius: 10px;
+  position: center;
+  left: 0;
+  width: 640px;
+	height: 500px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.logout {
+	border-radius: 10px;
+	background-color: #555;
+	height: 30px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Arial;
+}
+
+.login {
+  border-radius: 10px;
+	background-color: #555;
+	height: 30px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: Arial;
+}
+
+.login:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+.circular--portrait {
+  position: center;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+	border-radius: 50%;
+	border: 3px solid #555;
+	margin: 0 auto;
+	background-color: #555;
+}
+
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+}
+
+.signup {
+	margin: 0 auto;
+}
+
+.InvCode {
+  background-color: #fff
+}
+
+.warningbox {
+	border-radius: 10px;
+	position: center;
+	left: 0;
+	width: 300px;
+	height: 75px;
+	padding: 10px;
+	margin: 0 auto;
+	background-color: #555;
+	font-family: Arial;
+}
+
+.adminbutton {
+	background-color: #555;
+	border-radius: 50%;
+	width: 75px;
+	height: 75px;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-color: rgba(0, 0, 0, 0.15);
+	color: #fff;
+	font-weight: lighter;
+	font-size: 50px;
+	font-family: Arial;
+}
+
+.userLeft {
+	width:320px;
+	height:450px;
+	border-right: 2px solid #555;
+}
+
+.userRight {
+	float: right;
+	margin-top: -470px;
+	width:320px;
+	height:450px;
+}
+
+.settingstext {
+  position: sticky;
+	left: 0;
+  width: 300px;
+	height: 300px;
+  background-color: #fff
+}
+
+.foundbox {
+	border-radius: 3.3783783783783785vw;
+	background: #fff;
+	width: 94.5945945945946vw;
+	height: 20.27027027027027vw;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 1.3513513513513513vw;
+}
+
+.foundimage_container {
+	width: 16.89189189189189vw;
+	height: 16.89189189189189vw;
+	overflow: hidden;
+	border-radius: 50%;
+	background: #555;
+}
+
+.foundimage {
+	width: 13.513513513513514vw;
+	height: 20.27027027027027vw;
+	height: 12.162162162162163vw;
+	margin: 1.7567567567567568vw;
+}
+
+.foundimage_container img {
+	object-fit: cover;
+	border: 3px solid #555;
+}
+
+.foundtext {
+	font-family: MetroRegular;
+	float: left;
+	color: #555;
+	margin-top: -12.162162162162163vw;
+	margin-left: 20.27027027027027vw;
+}
+
+.add-friend {
+	float: right;
+	margin-top: 5.405405405405405vw;
+	margin-right: 2.7027027027027026vw;
+	border-radius: 10px;
+	width:  14.864864864864865vw;
+	background-color: #555;
+	height: 4.054054054054054vw;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 2.1621621621621623vw;
+	color: #fff;
+	font-family: MetroRegular, Ariel;
+}
+
+.show-profile {
+	float: right;
+	margin-top: 10.81081081081081vw;
+	margin-right: -14.864864864864865vw;
+	border-radius: 10px;
+	background-color: #555;
+	height: 4.054054054054054vw;
+	width:  14.864864864864865vw;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Ariel;
+}
+
+.founddate {
+	font-family: MetroRegular;
+	float: left;
+	color: #555;
+	margin-top: -8.108108108108109vw;
+	margin-left: 20.27027027027027vw;
+}
+
+.imagepicker {
+	float:inherit;
+	margin-top: -220px;
+	opacity: 0;
+	transition: opacity .25s ease-in-out;
+}
+
+.imagepicker:hover{
+	opacity:0.75;
+}
+
+.find_friends{
+	position: relative;
+	bottom: 1px;
+	margin-left: 115px;
+	border-radius: 10px;
+	background-color: #555;
+	height: 30px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Arial;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.slideout-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 256px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
 }

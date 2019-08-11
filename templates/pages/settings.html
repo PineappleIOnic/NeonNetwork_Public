@@ -9,25 +9,46 @@
 <!-- Initialise CSS here -->
 <link rel="stylesheet" href='{% static "css/settings.css" %}' crossorigin="anonymous">
 <link rel="stylesheet" href='{% static "css/base.css" %}' crossorigin="anonymous">
+<link rel="stylesheet" href='{% static "css/bootstrap.css" %}' crossorigin="anonymous">
 
 {% endblock %}
-
+{% block javascript %}
+<body>
+<script>
+  function changeThemeDark() {}
+</script>
+<script>
+  function changeThemeLight() {}
+</script>
+</body>
+{% endblock %}
 {% block content %}
-
 <div class="mainusers">
   <center><p></p><p class="mainfont"><u>Settings</u><p></center>
     <div class="settingstext">
-      <center><br></br>Red</center>
-
-
-
-      <center><p></p>Green</center>
-
-
-
-      <center><p></p>Blue</center>
-
-
+      <center><br></br></center>
+      <div class="dropdown">
+        <button class="dropbtn">Background</button>
+        <div class="dropdown-content">
+          <button type="button" class="btn btn-light" onclick="changeBackgroundFunc('1')">Default</button>
+          <div></div>
+          <button type="button" class="btn btn-light" onclick="changeBackgroundFunc('2')">Fire</button>
+          <div></div>
+          <button type="button" class="btn btn-light" onclick="changeBackgroundFunc('3')">Water</button>
+          <div></div>
+          <button type="button" class="btn btn-light" onclick="changeBackgroundFunc('4')">Night</button>
+          <div></div>
+          <button type="button" class="btn btn-light" onclick="changeBackgroundFunc('5')">Dark</button>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Theme</button>
+        <div class="dropdown-content">
+          <button type="button" class="btn btn-light" onclick="changeThemeLight()">Light</button>
+          <div></div>
+          <button type="button" class="btn btn-light" onclick="changeThemeDark()">Dark</button>
+        </div>
+      </div>
 
     </div>
 

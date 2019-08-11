@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Neon InvCode{% endblock %}
+
+{% block content %}
+<div style="position: relative; background: #fff; border-radius: 5px; height: 10vw; width: 60vw; position: center;">
+<body>
+  <br></br>
+  <center><h2>{{ reason }}</h2></center>
+  <center><button onclick="window.location.href='/'" style="position: absolute; bottom: 1vh; width: 55vw; margin-left: 2.5vw" type="button" class="btn btn-secondary btn-lg btn-block">Go Back</button></center>
+</body>
+</div>
+{% endblock content %}

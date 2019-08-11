@@ -1,34 +1,38 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 
 {% load static %}
 
 {% block content %}
 <!DOCTYPE html>
 <html>
-  <div class="mains">
-    <head>
-        <meta charset="utf-8">
-        <title>Minimal Django File Upload Example</title>
-    </head>
-
+  <div class="mainusers">
     <body>
 
         <!-- Upload form. Note enctype attribute! -->
         <center>
-          <p>{{ id }}</p>
-          <p>{{ pk }}</p>
+          <h4 style="font-family: metroregular; color: #555;">Upload a Profile Picture</h4>
+          <div class="circular--portrait">
+          <img id="ProfileBox" src="../{{ user.docfile }}" onerror="this.onerror=null;this.src='../static/users/default.gif';"/>
+            </div>
         <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ form.non_field_errors }}</p>
 
-            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
-
-            <p>
                 {{ form.docfile.errors }}
-                {{ form.docfile }}
-            </p>
+                <div class="input-group mb-3">
+                  <div class="custom-file">
+                    {{ form.docfile }}
+                    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                  </div>
+                  <div class="input-group-append">
+                    <button type="submit" value="Upload" class="input-group-text" id="inputGroupFileAddon02">Upload</button>
+                  </div>
+                </div>
+                <button type="button" onclick="window.location.href='../'" style="position: absolute; margin-left: 55px; bottom: 20px; width: 80%;" class="btn btn-secondary btn-lg btn-block">Go Back</button>
+                </div>
 
-            <p><input class="login" type="submit" value="Upload"/></p>
+            <p></p>
         </form>
         </center>
     </body>

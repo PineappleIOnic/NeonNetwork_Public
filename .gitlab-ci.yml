@@ -1,0 +1,29 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/python
+image: python:latest
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+  - ~/.cache/pip/
+
+stages:
+  - build
+
+build:
+  stage: build
+  tags:
+    - gitlab-org
+  before_script:
+    - python -V                                   # Print out python version for debugging
+    - pip install pipenv
+
+  script:
+    - pipenv install --dev
+    - cd /builds/PineappleIOnic/NeonNetwork
+    - ls
+    - pipenv run python manage.py makemigrations
+    - pipenv run python manage.py migrate --run-syncdb
+    - pipenv run python manage.py test

@@ -1,11 +1,10 @@
 # NeonNetwork Source Code
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![pipeline status](https://gitlab.com/PineappleIOnic/NeonNetwork/badges/master/pipeline.svg)]
 
 NeonNetwork is a off the grid social media, promoting anonyminity and modern values
 
   - Built on a scaleable interface
   - Powered by Django
-  - Skrrting on them dudes
 
 ### Tech
 
@@ -15,7 +14,7 @@ NeonNetwork uses a number of open source projects to work properly:
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
 * [jQuery] - duh
 
-And of course NeonNetwork itself is closed-source with a [private repository](https://github.com/PineappleIOnic/fantastic-octo-umbrella) on GitHub.
+And of course NeonNetwork itself is open-source with a [public repository](https://github.com/PineappleIOnic/NeonNetwork_Public) on GitHub.
 
 ### Installation
 
@@ -28,3 +27,5 @@ $ cd NeonNetwork
 $ pip install pipenv
 ```
 then run the initialize_source.bat on windows.
+
+for linux enviroments use virtualenv within the directory.

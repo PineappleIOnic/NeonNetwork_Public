@@ -1,5 +1,5 @@
 body {
-	width: 100wh;
+	width: 100vw;
 	height: 90vh;
 	color: #fff;
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
@@ -62,6 +62,11 @@ body {
   width: 30%;
 }
 
+.mainfont {
+	font-size: 25px;
+	font-family: MetroRegular, Arial, Helvetica, sans-serif
+}
+
 loginbox {
   border-radius: 25px;
   background: #73AD21;
@@ -90,16 +95,18 @@ loginbox {
 
 center {
   text-align: center;
-  font-family: 'Montserrat-Medium', Arial, Helvetica, sans-serif;
+  font-family: MetroRegular, Arial, Helvetica, sans-serif;
   font-weight: lighter;
   color: #555;
-  src: url('http://127.0.0.1:8000/static/Montserrat-Medium.ttf')  format("truetype"),
-     local('Montserrat-Medium');
+}
+
+p {
+	font-family: MetroRegular, Arial, Helvetica, sans-serif;
 }
 
 .mains {
   border-radius: 10px;
-  position: center;
+  position: relative;
   left: 0;
   width: 320px;
 	height: 500px;
@@ -108,9 +115,20 @@ center {
   background-color: #fff
 }
 
-.mainusers {
+.mainsmall {
   border-radius: 10px;
   position: center;
+  left: 0;
+  width: 320px;
+	height: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff
+}
+
+.mainusers {
+  border-radius: 10px;
+  position: relative;
   left: 0;
   width: 640px;
 	height: 500px;
@@ -120,6 +138,16 @@ center {
 }
 
 .wrapper {
+	position: center;
+	bottom: 20px;
+	left: 35px;
+	text-align: center;
+}
+
+.searchwrapper {
+	position: absolute;
+	bottom: 20px;
+	left: 35px;
 	text-align: center;
 }
 
@@ -130,7 +158,7 @@ center {
 	border-color: rgba(0, 0, 0, 0.15);
 	font-size: 16px;
 	color: #fff;
-	font-family: Arial;
+	font-family: MetroRegular, Arial;
 }
 
 .login {
@@ -140,7 +168,12 @@ center {
 	border-color: rgba(0, 0, 0, 0.15);
 	font-size: 16px;
 	color: #fff;
-	font-family: Arial;
+	font-family: MetroRegular;
+}
+
+.login:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
 }
 
 .circular--portrait {
@@ -148,8 +181,10 @@ center {
   width: 200px;
   height: 200px;
   overflow: hidden;
-  border-radius: 50%;
+	border-radius: 50%;
+	border: 3px solid #555;
 	margin: 0 auto;
+	background-color: #555;
 }
 
 .circular--portrait img {
@@ -189,4 +224,182 @@ center {
 	font-weight: lighter;
 	font-size: 50px;
 	font-family: Arial;
+}
+
+.userLeft {
+	width:320px;
+	height:450px;
+	border-right: 2px solid #555;
+}
+
+.userRight {
+	float: right;
+	margin-top: -470px;
+	width:320px;
+	height:450px;
+}
+
+.settingstext {
+  position: sticky;
+	left: 0;
+  width: 300px;
+	height: 300px;
+  background-color: #fff
+}
+
+.foundbox {
+	border-radius: 25px;
+	background: #fff;
+	width: 700px;
+	height: 150px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.foundimage_container {
+	width: 125px;
+	height: 125px;
+	overflow: hidden;
+	border-radius: 50%;
+	background: #555;
+}
+
+.foundimage {
+	width: 100px;
+	height: 150px;
+	height: 90px;
+	margin: 13px;
+}
+
+.foundimage_container img {
+	object-fit: cover;
+	border: 3px solid #555;
+}
+
+.foundtext {
+	font-family: MetroRegular;
+	float: left;
+	color: #555;
+	margin-top: -90px;
+	margin-left: 150px;
+}
+
+.add-friend {
+	float: right;
+	margin-top: 40px;
+	margin-right: 20px;
+	border-radius: 10px;
+	width:  110px;
+	background-color: #555;
+	height: 30px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Ariel;
+}
+
+.show-profile {
+	float: right;
+	margin-top: 80px;
+	margin-right: -110px;
+	border-radius: 10px;
+	background-color: #555;
+	height: 30px;
+	width:  110px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Ariel;
+}
+
+.founddate {
+	font-family: MetroRegular;
+	float: left;
+	color: #555;
+	margin-top: -60px;
+	margin-left: 150px;
+}
+
+.imagepicker {
+	float:inherit;
+	margin-top: -220px;
+	opacity: 0;
+	transition: opacity .25s ease-in-out;
+}
+
+.imagepicker:hover{
+	opacity:0.75;
+}
+
+.find_friends{
+	position: absolute;
+	margin-left: 115px;
+	border-radius: 10px;
+	background-color: #555;
+	height: 30px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroRegular, Arial;
+	bottom: 20px;
+}
+
+.friendbox {
+    width: 300px;
+    height: 370px;
+    margin-left: 25px;
+		overflow: hidden scroll;
+	}
+
+	.friendbox_inner {
+		margin-left: -50px;
+		margin-bottom: 10px;
+		border-radius: 15px;
+		width: 300px;
+		height: 80px;
+		background: #eee;
+	}
+
+	.discordhome {
+		position: absolute;
+		right: 18px;
+		bottom: 14px;
+		width: 290px;
+		height: 90px;
+		border-radius: 10px;
+		background-color: #7289DA;
+	}
+
+<!-- Taran Stuff -->
+
+.container {
+	position: absolute;
+	display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+	width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
 }

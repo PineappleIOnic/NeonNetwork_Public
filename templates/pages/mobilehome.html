@@ -9,12 +9,7 @@
 
 {% if user.is_authenticated %}
 
-  <script src="static/js/mobilecheck.js"></script>
-
-  <button class="settingsbutton" onclick="window.location.href='../settings'">
-      <img style="fill: #fff;" src='{% static "images/settings.png" %}'>
-  </button>
-
+<script src='{% static "js/desktopcheck.js" %}'></script>
 
   <div class="mainusers">
     <div style="margin-top: 25%;"></div>
@@ -33,8 +28,10 @@
       </div>
     </div>
     <div class="circular--portrait">
-    <img id="ProfileBox" src="../static/users/{{ user.username }}.gif" onerror="this.onerror=null;this.src='../static/users/default.gif';"/>
-      </div>
+    <img onclick="window.location.href='/CDN'" id="ProfileBox" src="../{{ user.docfile }}" onerror="this.onerror=null;this.src='../static/users/default.gif';"/>
+  </div>
+
+
 {% else %}
   <div class='mains'>
   <center><p>You are not logged in</p></center>

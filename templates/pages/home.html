@@ -3,28 +3,51 @@
 
 {% load static %}
 
-{% block title %}NeonAuth{% endblock %}
+{% block title %}NeonNet - The Next Gen Social Media{% endblock %}
 
 {% block content %}
 
 {% if user.is_authenticated %}
+
+{% load friendshiptags %}
+{% load user_conv %}
+<!-- Scroll Bar Ini-->
+
+<!-- Mobile Checker-->
+
 <script type="text/javascript" src="static/js/mobilecheck.js"></script>
 
   <div class="mainusers">
-    <div class = "userLine">
-      <center><p></p><p class="mainfont"><u>{{ user.username }}</u><p></center>
+    <div class = "userLeft">
+      <center style="margin-left: 25px;"><p></p><p class="mainfont">{{user.username}}<u></u></p></center>
       <div class="circular--portrait">
-      <img id="ProfileBox" src="static/users/{{ user.username }}.gif" onerror="this.onerror=null;this.src='static/users/default.gif';"/>
+      <img onclick="window.location.href='/CDN'" id="ProfileBox" src="{{ user.docfile }}" onerror="this.onerror=null;this.src='static/users/default.gif';"/>
+      <img class="imagepicker" onclick="window.location.href='/CDN'" id="ProfileBox" src="static/images/imageload.png"/>
         </div>
         <center><p><br></br> Date Joined: {{user.date_joined}}</p></center>
         {% if user.is_superuser %}
         <center><p>Developer</p></center>
         {% endif %}
-        <div class="wrapper">
-          <button class="logout" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
-          <button class="logout" onclick="window.location.href='/invgen'">Generate Invite Code</button>
+        <div style="position: absolute; bottom: 20px; margin-left: 50px;">
+          <button type="button" onclick="window.location.href='/users/logout'" class="btn btn-secondary btn-sm">Logout</button>
+          <button type="button" onclick="window.location.href='/invgen'" class="btn btn-secondary btn-sm">Generate Invite Code</button>
         </div>
       </div>
+
+      <div class = "userRight">
+        <center><p></p><p class="mainfont"><u>Friend List</u></p></center>
+        <div class="friendbox">
+          <center>
+          {% friend_requests request.user %}
+          {% friends request.user %}
+          </center>
+        </div>
+        <div style="position: absolute; bottom: 20px; margin-left: 125px;">
+        <button type="button" onclick="window.location.href='/search'" class="btn btn-secondary btn-sm">Find Friends</button>
+        </div>
+          </div>
+
+
 {% else %}
   <div class='mains'>
   <center><br></br><p>You are not logged in</p></center>
@@ -33,10 +56,17 @@
   </div>
   <div class="wrapper">
   <center><p></p><p>Got a invite code?</p></center>
-  <button class="login" onclick="window.location.href='{% url 'account_signup' %}'">Signup</button>
+  <button class="login" onclick="window.location.href='/invite'">Signup</button>
   </div>
   </div>
 {% endif %}
+
+<!--
+<div class="discordhome">
+<img onclick="location ='https://discord.gg/EC7wtxJ'" style="display: block; height: 100px; width: auto; margin: auto;" src="static/images/Discord-Logo+Wordmark-White.png"></img>
+</div>
+-->
+
 {% endblock %}
 
 { block javascript }

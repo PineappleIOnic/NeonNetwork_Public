@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}NeonNet - The Next Gen Social Media{% endblock %}
+
+{% block content %}
+
+<script>
+  function invitecheck()
+    {
+      var invitecode = document.getElementById('inviteelement').value;
+      window.location.href = ("/invcheck/" + invitecode)
+    }
+</script>
+
+<div class="mainsmall">
+    <center><p></p><p class="mainfont">Input an Invite Code:<p>
+    <input type="text" class="form-control" id="inviteelement"></input>
+    <br></br>
+  <button class="login" onclick="invitecheck()">Submit</button></center>
+</div>
+
+{% endblock %}

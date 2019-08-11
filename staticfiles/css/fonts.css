@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'MetroRegular';
+  src: url('../fonts/Metro/woff2/Metropolis-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Metro/ttf/Metropolis-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'MetroBold';
+  src: url('../fonts/Metro/woff2/Metropolis-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Metro/ttf/Metropolis-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'MetroLight';
+  src: url('../fonts/Metro/woff2/Metropolis-Light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Metro/ttf/Metropolis-Light.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'MetroThin';
+  src: url('../fonts/Metro/woff2Metropolis-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Metro/ttf/Metropolis-Thin.ttf')  format('truetype'); /* Safari, Android, iOS */
+}

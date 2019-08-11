@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+
+{% load friendshiptags %}
+
+{% block content %}
+
+<html>
+  {% for user in users %}
+  <div class="foundbox">
+    <button onclick="window.location.href='../friend/add/{{ user.id }}'" class="add-friend">Add Friend</button>
+    <button onclick="window.location.href='../profile/{{ user.id }}'"      class="show-profile">Profile</button>
+    <div class="foundimage">
+      <div class="foundimage_container">
+        <img class="foundimage_container" src="../{{ user.docfile }}"     onerror="this.onerror=null;this.src='../static/users/default.gif';"></img>
+     </div>
+   </div>
+   <h2 class="foundtext">{{user.username}}</h2>
+   <p class="founddate">Join date: {{user.date_joined}}</p>
+  </div>
+  {% endfor %}
+  <center><button onclick="location = location" style="margin-top: 10px" type="button" class="btn btn-secondary btn-lg">Go Back</button></center>
+</html>
+
+{% endblock %}

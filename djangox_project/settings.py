@@ -39,11 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sites',  # new
     'InvGen',
     'FileHandler',
+    'search',
+    "friendship",
+    'blog',
 
     # Third-party
     'allauth',  # new
     'allauth.account',  # new
     'crispy_forms',  # new
+    'markdownx',
 
     # Local
     'users',
@@ -52,7 +56,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -111,6 +114,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -130,6 +140,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
@@ -152,4 +166,3 @@ SITE_ID = 1
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

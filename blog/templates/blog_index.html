@@ -1,0 +1,29 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load markdown_render %}
+
+{% block title %}NeonNetwork Blog{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/blog/blog.css" %}" crossorigin="anonymous">
+<div class="BlogBackground">
+  {% for p in blog %}
+    <div class="PostPreview">
+      <div style="margin-left: 4px;">
+        <h2>{{ p.title }}</h2>
+        <div style="text-overflow: ellipsis;">
+        <p style="height: 45px; overflow: hidden; text-overflow: ellipsis;">{{ p.post_content }}</p>
+        </div>
+        <p>{{ p.date_posted }}</p>
+        <p>{{ p.author }}</p>
+        <button style="margin-left: 89%; margin-top: -65px;" onclick="location.href='post/{{ p.pk }}'" type="button" class="btn btn-secondary">Read More</button>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

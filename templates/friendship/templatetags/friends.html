@@ -1,0 +1,51 @@
+{% load user_conv %}
+
+<ul>
+    {% for f in friends %}
+      <div class="friendbox_inner">
+        <ul style="font-family: MetroRegular">{{ f.username }}</ul>
+        <div style="margin-top: -20px; margin-left: 10px; width: 75px; height: 75px;" class="circular--portrait">
+        <img id="ProfileBox" src="{{ f.pk|id_2_image }}" onerror="this.onerror=null;this.src='static/users/default.gif';"/>
+          </div>
+          <div style="margin-left: 30px; margin-top: -70px" class="btn-group">
+            <button class="btn btn-secondary btn-sm" type="button">
+              Message
+            </button>
+            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Other</span>
+            </button>
+            <div class="dropdown-menu">
+              <button style="color: red;" class="dropdown-item" type="button" data-toggle="modal" data-target="#BlockCheck{{f.pk}}">Block</button>
+            </div>
+          </div>
+
+          <div class="modal" id="BlockCheck{{f.pk}}">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 style="color: #555; font-family: MetroRegular;" class="modal-title">UNFRIEND</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div style="color: #555; font-family: MetroRegular;" class="modal-body">
+                  You are about to unfriend {{f.username}}
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+                  <button onclick="window.location.href='/friend/unfriend/{{f.pk}}'" type="button" class="btn btn-danger" data-dismiss="modal">Unfriend</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+      </div>
+    {% endfor %}
+</ul>

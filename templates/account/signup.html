@@ -4,12 +4,25 @@
 {% block title %}Sign up{% endblock %}
 
 {% block content %}
+
+<script>
+window.onload = function()
+{
+  var oldURL = document.referrer;
+  if (oldURL == "") {
+    window.location.href="../../"
+  }
+
+}
+</script>
+
 <div class="mains">
 <center><h2>Sign up</h2>
 <form method="post">
   {% csrf_token %}
   {{ form|crispy }}
-  <button class="login" type="submit">Sign up</button>
+  <p>I accept the <a href="/terms">  terms and conditions</a>: <input type="checkbox"  onchange="document.getElementById('signup').disabled = !this.checked;" /></p>
+  <button id="signup" class="login" type="submit" disabled>Sign up</button>
 </form></center>
 </div>
 {% endblock content %}

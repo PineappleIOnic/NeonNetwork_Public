@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %}NeonNet - The Next Gen Social Media{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<script type="text/javascript" src="static/js/mobilecheck.js"></script>
+
+<div class="mains">
+    <p>{{ user.username }}</p> <!-- I know this wouldn't work, It's just a place holder at the moment -->
+
+
+
+    <center><p></p><p class="mainfont"><u>{{ user.username }}</u><p></center>
+      <div class="circular--portrait">
+        <img id="ProfileBox" src="../{{ user.docfile }}" onerror="this.onerror=null;this.src='../static/users/default.gif';"/>
+      </div>
+      <center><p><br></br> Date Joined: {{user.date_joined}}</p></center>
+      {% if user.is_superuser %}
+        <center><p>Developer</p></center>
+      {% endif %}
+</div>
+{% endif %}
+{% endblock %}

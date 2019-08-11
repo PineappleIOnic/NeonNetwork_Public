@@ -1,0 +1,14 @@
+{% load user_conv %}
+
+<ul>
+    {% for friend_request in friend_requests %}
+      <div class="friendbox_inner">
+        <ul style="font-family: MetroRegular">{{ friend_request|id_2_username }}</ul>
+        <div style="margin-top: -20px; margin-left: 10px; width: 75px; height: 75px;" class="circular--portrait">
+        <img id="ProfileBox" src="{{ friend_request|id_2_image }}" onerror="this.onerror=null;this.src='static/users/default.gif';"/>
+          </div>
+          <button onclick="window.location.href='/friend/accept/{{ friend_request }}'" style="margin-left: 30px; margin-top: -70px" type="button" class="btn btn-success">Accept</button>
+          <button onclick="window.location.href='/friend/deny/{{ friend_request }}'" style="margin-top: -70px" type="button" class="btn btn-danger">Deny</button>
+      </div>
+    {% endfor %}
+</ul>

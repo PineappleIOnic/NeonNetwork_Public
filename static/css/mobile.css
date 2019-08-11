@@ -1,0 +1,227 @@
+body {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+#div_id_email {
+  display: none;
+}
+
+@font-face {
+  font-family: 'MetroRegular';
+  src: url('../fonts/Metro/woff2/Metropolis-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Metro/ttf/Metropolis-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+.para {
+  text-align: center;
+  font-family: 'MetroRegular';
+  font-weight: lighter;
+}
+
+.logoimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+loginbox {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+.mein {
+  text-align: center;
+  font-family: 'Segoe UI';
+  font-weight: lighter;
+}
+
+bold1 {
+	font-weight: bold;
+}
+
+.inputbox {
+  padding: 0;
+  height: 30px;
+  position: center;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 16px;
+}
+
+center {
+  text-align: center;
+  font-family: MetroRegular, Arial, Helvetica, sans-serif;
+  color: #555;
+}
+
+light {
+	font-weight: lighter;
+}
+
+.mains {
+  border-radius: 10px;
+  position: center;
+  left: 0;
+	height: 500px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff
+}
+
+.mainusers {
+  position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 70%;
+  background-color: #fff;
+	border-top: 3px solid #555;
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.settingsbutton {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	background-color: Transparent;
+	border-radius: 50%;
+	border: none;
+}
+
+.settingsbutton:hover {
+	background-color: #555
+}
+
+.logout {
+	border-radius: 15px;
+	background-color: #555;
+	height: 50px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: MetroLight;
+	width: 90%
+}
+
+.logout:hover {
+  background-color: #333; /* Bright Gray */
+}
+
+.login {
+  border-radius: 10px;
+	background-color: #555;
+	height: 30px;
+	border-color: rgba(0, 0, 0, 0.15);
+	font-size: 16px;
+	color: #fff;
+	font-family: Arial;
+}
+
+.circular--portrait {
+  position: absolute;
+	left: 50%;
+  width: 50vw;
+  height: 50vw;
+  overflow: hidden;
+  border-radius: 50%;
+	border: 3px solid #555;
+  margin-left: -25vw;
+}
+
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+}
+
+.signup {
+	margin: 0 auto;
+}
+
+.InvCode {
+  background-color: #fff
+}
+
+.warningbox {
+	border-radius: 10px;
+	position: center;
+	left: 0;
+	width: 300px;
+	height: 75px;
+	padding: 10px;
+	margin: 0 auto;
+	background-color: #555;
+	font-family: Arial;
+}
+
+.adminbutton {
+	background-color: #555;
+	border-radius: 50%;
+	width: 75px;
+	height: 75px;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-color: rgba(0, 0, 0, 0.15);
+	color: #fff;
+	font-weight: lighter;
+	font-size: 50px;
+	font-family: Arial;
+}
+
+.userLine {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}

@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% block title %}Neon InvCode{% endblock %}
+
+{% block content %}
+<div class="mains">
+<body>
+  <div class="warningbox" style="background-color: gray;">
+    <center style="color: white;"><p>[Warning] Unused Invite codes are removed at the end of the day</p></center>
+  </div>
+  <center><p>Your Invite Code is:</p></center>
+  <center><p>{{ InvCode }}</p></center>
+  <div class="wrapper">
+    <button class="logout" onclick="window.location.href='..'">Go Back</button>
+  </div>
+</body>
+</div>
+{% endblock content %}

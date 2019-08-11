@@ -1,0 +1,44 @@
+<!-- templates/home.html -->
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %}NeonAuth{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<script type="text/javascript" src="static/js/mobilecheck.js"></script>
+
+  <div class="mainusers">
+    <div class = "userLine">
+      <center><p></p><p class="mainfont"><u>{{ user.username }}</u><p></center>
+      <div class="circular--portrait">
+      <img id="ProfileBox" src="static/users/{{ user.username }}.gif" onerror="this.onerror=null;this.src='static/users/default.gif';"/>
+        </div>
+        <center><p><br></br> Date Joined: {{user.date_joined}}</p></center>
+        {% if user.is_superuser %}
+        <center><p>Developer</p></center>
+        {% endif %}
+        <div class="wrapper">
+          <button class="logout" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+          <button class="logout" onclick="window.location.href='/invgen'">Generate Invite Code</button>
+        </div>
+      </div>
+{% else %}
+  <div class='mains'>
+  <center><br></br><p>You are not logged in</p></center>
+  <div class="wrapper">
+  <button class="login" onclick="window.location.href='{% url 'account_login' %}'">Login</button>
+  </div>
+  <div class="wrapper">
+  <center><p></p><p>Got a invite code?</p></center>
+  <button class="login" onclick="window.location.href='{% url 'account_signup' %}'">Signup</button>
+  </div>
+  </div>
+{% endif %}
+{% endblock %}
+
+{ block javascript }
+  <script src="static/js/mobilecheck.js"></script>
+{ endblock }

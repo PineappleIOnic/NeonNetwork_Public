@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block title %}500 Server Error{% endblock %}
+
+{% block content %}
+<div class=mains>
+<center><h1>Success</h1>
+<p>Contact a admin to activate your account.</p></center>
+<div class="wrapper">
+<button class="login" onclick="window.location.href='{% url 'account_login' %}'">Login</button>
+</div>
+{% endblock content %}

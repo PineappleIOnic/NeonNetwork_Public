@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}404 Page not found{% endblock %}
+
+{% block content %}
+<div class="mains">
+<h2 style="color: #555; text-align: center">Page not found</h2>
+<h4 style="color: #555; text-align: center">Keep Calm, and bassline.</h4>
+<h1>  <h1>
+<img style="width: 300px; height: 275px; border-radius: 5%" src="{% static "images/Bass_Sign.gif" %}"></img>
+<h4 style="color: #555; text-align: center"> Optionally you can</h4>
+<div class="wrapper">
+<button class="login" onclick="window.location.href='/'" style="width: 300px">Go Home</button>
+</div>
+</div>
+{% endblock content %}

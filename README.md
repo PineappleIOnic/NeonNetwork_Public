@@ -1,8 +1,7 @@
 # NeonNetwork Source Code
 [![pipeline status](https://gitlab.com/PineappleIOnic/NeonNetwork/badges/master/pipeline.svg)]
 
-NeonNetwork is a off the grid social media, promoting anonyminity and modern values
-
+NeonNetwork was an attempt at an social media
   - Built on a scaleable interface
   - Powered by Django
 
